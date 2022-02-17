@@ -133,3 +133,39 @@ client.on('messageReactionRemove', async (reaction, user) => {
       }
   } else return;
 });
+
+// Adding Alert Role
+client.on('messageReactionAdd', async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  if (reaction.partial) await reaction.fetch();
+  if (user.bot) return;
+  if (!reaction.message.guild) return;
+  console.log(reaction.message.channel.id);
+  if (reaction.message.channel.id == '921571783411367946') {
+     console.log(reaction.emoji.name);
+     //adding the role
+      if (reaction.emoji.name === '🔔') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('943623672336384032');
+      }
+
+  } else return;
+});
+
+
+// Removing Alert Role
+client.on('messageReactionRemove', async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  if (reaction.partial) await reaction.fetch();
+  if (user.bot) return;
+  if (!reaction.message.guild) return;
+  if (reaction.message.channel.id == '921571783411367946') {
+    //remove the role
+      if (reaction.emoji.name === '🔔') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.remove('943623672336384032');
+      }
+  } else return;
+});
