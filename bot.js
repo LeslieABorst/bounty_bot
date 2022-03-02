@@ -9,11 +9,11 @@ client.on('ready', () => {
     console.log('Bot is ready');
 });
 
-// client.on('message', (msg) => {
-//     if (msg.content === '?heart') {
-//       msg.channel.send(':heart:');
-//     }
-//   });
+client.on('message', (msg) => {
+    if (msg.content === '?heart') {
+      msg.channel.send(':heart:');
+    }
+  });
 
 
 //MAC SERVER
