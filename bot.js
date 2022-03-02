@@ -9,12 +9,14 @@ client.on('ready', () => {
     console.log('Bot is ready');
 });
 
-client.on('message', (msg) => {
-    if (msg.content === '?heart') {
-      msg.channel.send(':heart:');
-    }
-  });
+// client.on('message', (msg) => {
+//     if (msg.content === '?heart') {
+//       msg.channel.send(':heart:');
+//     }
+//   });
 
+
+//MAC SERVER
 // Adding Color Roles
 
 client.on('messageReactionAdd', async (reaction, user) => {
@@ -114,6 +116,8 @@ client.on('messageReactionRemove', async (reaction, user) => {
   } else return;
 });
 
+
+//CHII SERVER
 // Adding Pronoun Roles
 client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.fetch();
