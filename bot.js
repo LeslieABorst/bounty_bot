@@ -19,7 +19,7 @@ client.on('message', (msg) => {
 
 client.on('message', (message) => {
   const { channel } = message;
-  if(channel.type == 'news' && channel.id == '813958914395602964') {
+  if(channel.type == 'news') {
     message.crosspost();
     console.log('published news message');
   }
