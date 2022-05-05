@@ -15,9 +15,19 @@ client.on('message', (msg) => {
     }
   });
 
+//AUTO PUBLISH
+
+client.on('message', (message) => {
+  const { channel } = message;
+  if(channel.type == 'news' && channel.id == '813958914395602964') {
+    message.crosspost();
+    console.log('published news message');
+  }
+
+});
 
 //MAC SERVER
-// Adding Color Roles
+//Adding Color Roles
 
 client.on('messageReactionAdd', async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
@@ -68,7 +78,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
   } else return;
 });
 
-// Removing Color Roles
+//Removing Color Roles
 
 client.on('messageReactionRemove', async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
@@ -118,7 +128,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
 
 
 //CHII SERVER
-// Adding Pronoun Roles
+//Adding Pronoun Roles
 client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.fetch();
     if (reaction.partial) await reaction.fetch();
@@ -179,7 +189,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     } else return;
 });
 
-// Removing Pronoun Roles
+//Removing Pronoun Roles
 client.on('messageReactionRemove', async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
   if (reaction.partial) await reaction.fetch();
@@ -237,7 +247,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
   } else return;
 });
 
-// Adding Alert Role
+//Adding Alert Role
 client.on('messageReactionAdd', async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
   if (reaction.partial) await reaction.fetch();
@@ -257,7 +267,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 });
 
 
-// Removing Alert Role
+//Removing Alert Role
 client.on('messageReactionRemove', async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
   if (reaction.partial) await reaction.fetch();
