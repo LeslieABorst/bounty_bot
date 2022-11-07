@@ -135,7 +135,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
     console.log(reaction.message.channel.id);
-    if (reaction.message.channel.id == '921571783411367946') {
+    if (reaction.message.channel.id == '921571783411367946' || reaction.message.channel.id == '1039248289066930236') {
        console.log(reaction.emoji.name);
        //he him
         if (reaction.emoji.name === '❤️') {
@@ -195,7 +195,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
   if (reaction.partial) await reaction.fetch();
   if (user.bot) return;
   if (!reaction.message.guild) return;
-  if (reaction.message.channel.id == '921571783411367946') {
+  if (reaction.message.channel.id == '921571783411367946' || reaction.message.channel.id == '1039248289066930236') {
     //he him
       if (reaction.emoji.name === '❤️') {
         await reaction.message.guild.members.cache
@@ -248,37 +248,37 @@ client.on('messageReactionRemove', async (reaction, user) => {
 });
 
 //Adding Alert Role
-client.on('messageReactionAdd', async (reaction, user) => {
-  if (reaction.message.partial) await reaction.message.fetch();
-  if (reaction.partial) await reaction.fetch();
-  if (user.bot) return;
-  if (!reaction.message.guild) return;
-  console.log(reaction.message.channel.id);
-  if (reaction.message.channel.id == '921571783411367946') {
-     console.log(reaction.emoji.name);
-     //adding the role
-      if (reaction.emoji.name === '🔔') {
-        await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.add('943623672336384032');
-      }
+// client.on('messageReactionAdd', async (reaction, user) => {
+//   if (reaction.message.partial) await reaction.message.fetch();
+//   if (reaction.partial) await reaction.fetch();
+//   if (user.bot) return;
+//   if (!reaction.message.guild) return;
+//   console.log(reaction.message.channel.id);
+//   if (reaction.message.channel.id == '921571783411367946') {
+//      console.log(reaction.emoji.name);
+//      //adding the role
+//       if (reaction.emoji.name === '🔔') {
+//         await reaction.message.guild.members.cache
+//           .get(user.id)
+//           .roles.add('943623672336384032');
+//       }
 
-  } else return;
-});
+//   } else return;
+// });
 
 
-//Removing Alert Role
-client.on('messageReactionRemove', async (reaction, user) => {
-  if (reaction.message.partial) await reaction.message.fetch();
-  if (reaction.partial) await reaction.fetch();
-  if (user.bot) return;
-  if (!reaction.message.guild) return;
-  if (reaction.message.channel.id == '921571783411367946') {
-    //remove the role
-      if (reaction.emoji.name === '🔔') {
-        await reaction.message.guild.members.cache
-          .get(user.id)
-          .roles.remove('943623672336384032');
-      }
-  } else return;
-});
+// Removing Alert Role
+// client.on('messageReactionRemove', async (reaction, user) => {
+//   if (reaction.message.partial) await reaction.message.fetch();
+//   if (reaction.partial) await reaction.fetch();
+//   if (user.bot) return;
+//   if (!reaction.message.guild) return;
+//   if (reaction.message.channel.id == '921571783411367946') {
+//     //remove the role
+//       if (reaction.emoji.name === '🔔') {
+//         await reaction.message.guild.members.cache
+//           .get(user.id)
+//           .roles.remove('943623672336384032');
+//       }
+//   } else return;
+// });
