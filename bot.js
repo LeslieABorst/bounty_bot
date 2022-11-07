@@ -34,7 +34,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
     console.log(reaction.message.channel.id);
-    if (reaction.message.channel.id == '921571783411367946' || reaction.message.channel.id == '1039248289066930236') {
+    if (reaction.message.channel.id == '921571783411367946') {
        console.log(reaction.emoji.name);
        //he him
         if (reaction.emoji.name === '❤️') {
@@ -94,7 +94,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
   if (reaction.partial) await reaction.fetch();
   if (user.bot) return;
   if (!reaction.message.guild) return;
-  if (reaction.message.channel.id == '921571783411367946' || reaction.message.channel.id == '1039248289066930236') {
+  if (reaction.message.channel.id == '921571783411367946' ) {
     //he him
       if (reaction.emoji.name === '❤️') {
         await reaction.message.guild.members.cache
@@ -144,6 +144,126 @@ client.on('messageReactionRemove', async (reaction, user) => {
           .roles.remove('921573251409379398');
       }
   } else return;
+});
+
+//MICH AEROSPACE SERVER
+//Adding Pronoun Roles
+client.on('messageReactionAdd', async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  if (reaction.partial) await reaction.fetch();
+  if (user.bot) return;
+  if (!reaction.message.guild) return;
+  console.log(reaction.message.channel.id);
+  if (reaction.message.channel.id == '1039248289066930236') {
+     console.log(reaction.emoji.name);
+     //he him
+      if (reaction.emoji.name === '❤️') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('1039250964496011344');
+          console.log("new role added!");
+      }
+      //she her
+      if (reaction.emoji.name === '🧡') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('1039250866672242708');
+      }
+      //they them
+      if (reaction.emoji.name === '💛') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('1039251092250312704');
+      }
+      //she they
+      if (reaction.emoji.name === '💚') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('1039251513102569602');
+      }
+      //he they
+      if (reaction.emoji.name === '💙') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('1039251588134469792');
+      }
+      //she he they
+      if (reaction.emoji.name === '💜') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('1039251631046402108');
+      }
+      //it/its
+    if (reaction.emoji.name === '🤎') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.add('1039251819832021102');
+    }
+    //other/ask
+    if (reaction.emoji.name === '🖤') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.add('1039251960118902896');
+    }
+  } else return;
+});
+
+//Removing Pronoun Roles
+client.on('messageReactionRemove', async (reaction, user) => {
+if (reaction.message.partial) await reaction.message.fetch();
+if (reaction.partial) await reaction.fetch();
+if (user.bot) return;
+if (!reaction.message.guild) return;
+if (reaction.message.channel.id == '1039248289066930236' ) {
+  //he him
+    if (reaction.emoji.name === '❤️') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039250964496011344');
+    }
+    //she her
+    if (reaction.emoji.name === '🧡') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039250866672242708');
+    }
+    //they them
+    if (reaction.emoji.name === '💛') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039251092250312704');
+    }
+    //she they
+    if (reaction.emoji.name === '💚') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039251513102569602');
+    }
+    //he they
+    if (reaction.emoji.name === '💙') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039251588134469792');
+    }
+    //she he they
+    if (reaction.emoji.name === '💜') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039251631046402108');
+    }
+    //it/its
+    if (reaction.emoji.name === '🤎') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039251819832021102');
+    }
+    //other/ask
+    if (reaction.emoji.name === '🖤') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.remove('1039251960118902896');
+    }
+} else return;
 });
 
 //Adding Alert Role
